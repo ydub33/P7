@@ -1,0 +1,178 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-container .bienvenue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.home-container a:hover {
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+}
+
+
+.home-container img {
+  width: 7%;
+  cursor: pointer;
+  animation: spin 17.5s linear infinite;
+}
+
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 35px 35px 35px 0;
+  padding: 20px;
+  margin: 20px 0 20px 0;
+  width: 35em;
+  box-shadow: 7px 0px 46px -16px grey;
+}
+
+.post-container .group {
+  width: 46%;
+}
+
+.post-container p {
+  font-size: 10px;
+  margin-top: 60px;
+}
+
+.post-container img {
+  width: 70%;
+}
+
+.post-container button {
+  width: 30%;
+  margin: 0;
+}
+
+.post-infos {
+  display: flex;
+  align-items: center;
+  margin-top: 55px;
+}
+
+.post-infos .pinfos {
+  margin: 0;
+  padding-left: 35px;
+}
+
+.post-infos img {
+  width: 5%;
+  padding-right: 5px;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+}
+
+.like-container img {
+  width: 18px;
+  padding-right: 5px;
+  cursor: pointer;
+  transform: scale(1.0);
+  transition: transform 300ms;
+}
+
+.like-container img:hover {
+  transform: scale(1.2);
+}
+
+.like-container span {
+  font-size: 11px;
+}
+
+.updating {
+  display: flex;
+  align-items: center;
+}
+
+.updating img {
+  width: 15px;
+  padding: 17px 12px 0 12px;
+  transform: scale(1.0);
+  transition: transform 400ms;
+  cursor: pointer;
+}
+
+.updating img:hover {
+  transform: scale(1.1);
+}
+
+.form-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10%;
+  width: 52em;
+}
+
+.form-post form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 55px;
+  border: 1px solid gray;
+  border-radius: 28px;
+}
+
+.form-post form .group {
+  flex-direction: row;
+}
+
+.form-post form img {
+  width: 20px;
+  position: relative;
+  opacity: 0.7;
+  color: #4E5166;
+  margin: -5px 0 0 0;
+  padding: 0 25px 0 0;
+}
+
+.form-post form label {
+  font-size: 12px;
+  margin: 10px 0 -9px 0;
+}
+
+.form-post form textarea {
+  font-family: Lato, sans-serif;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.form-post form input {
+  font-size: 10px;
+  text-align: center;
+  border-radius: 20px;
+  width: 83%;
+  height: 21px;
+  padding: 5px;
+  border: none;
+}
+
+
+.form-post form button {
+  width: 10em;
+  font-size: 12px;
+  box-shadow: 2px 7px 15px -13px gray;
+}
+

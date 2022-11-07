@@ -1,0 +1,45 @@
+.form-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 66em;
+  height: 18em;
+  margin-bottom: 10%;
+}
+
+.form-post button {
+  font-weight: 500
+}
+
+
+.form-edit {
+  box-shadow: 3px 0 25px -19px grey;
+  margin-bottom: 50px;
+}
+
+.form-edit label {
+  margin: 25px;
+  border-bottom: 1px solid black;
+}
+
+.form-edit textarea {
+  border-radius: 20px;
+  font-family: Lato, sans-serif;
+  width: 382px;
+  height: 43px;
+  text-align: center;
+}
+
+.form-edit input {
+  width: 50%;
+  border: none;
+  padding: 20px;
+}
+
+.form-edit img {
+  width: 70%;
+}
+
+.form-edit button {
+  font-weight: 300;
+}

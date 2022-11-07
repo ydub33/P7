@@ -1,0 +1,22 @@
+.public-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.public-header a {
+  display: flex;
+  align-items: center;
+}
+
+.public-header img {
+  margin-left: 15px;
+}
+
+.logout {
+  height: 100px;
+  width: 20px;
+  margin-top: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+}

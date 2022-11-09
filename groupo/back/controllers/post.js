@@ -12,14 +12,13 @@ exports.createPost = async (req, res) => {
         //Création d'un post
         const newPost = new Post({
             posterId: req.user,
-            name : req.user,
             post: req.body.post,
             imageUrl: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`,
             likers: []
         })
         let data = await newPost.save()
         return res.json({ message: 'Post créé', data: data })
-    } catch (err) {       
+    } catch (err) {
         return res.status(500).json({ err })
     }
 }
@@ -28,6 +27,8 @@ exports.modifyPost = (req, res) => {
     if (req.file) {
         Post.findOne({ _id: req.params.id })
             .then(post => {
+
+                if ((post.posterId == req.user) || (req.user == '63693c4fa0d5eb670cb0a5c9')) {
 
                 // Supprime l'ancienne image
                 const filename = post.imageUrl.split('/images/')[1];
@@ -40,15 +41,30 @@ exports.modifyPost = (req, res) => {
                         .then(() => res.status(200).json({ message: 'Post modifié !' }))
                         .catch(err => res.status(400).json({ err }));
                 })
-            })
+                       
+            } else {
+                res.status(403).json({ message: 'unauthorized request' });
+            }
+            
+            
+            
+            }
+            
+            )
             .catch(error => res.status(500).json({ error }));
     } else {
         const postObject = { ...req.body };
         Post.findOne({ _id: req.params.id })
             .then(post => {
-                Post.updateOne({ _id: req.params.id }, { ...postObject, _id: req.params.id })
-                    .then(() => res.status(200).json({ message: 'Post modifié!' }))
-                    .catch(error => res.status(401).json({ error }));
+                if ((post.posterId == req.user) || (req.user == '63693c4fa0d5eb670cb0a5c9')) {
+
+                    Post.updateOne({ _id: req.params.id }, { ...postObject, _id: req.params.id })
+                        .then(() => res.status(200).json({ message: 'Post modifié!' }))
+                        .catch(error => res.status(401).json({ error }));
+
+                } else {
+                    res.status(403).json({ message: 'unauthorized request' });
+                }
             })
             .catch((error) => {
                 res.status(400).json({ error });
@@ -61,7 +77,6 @@ exports.deletePost = (req, res) => {
     console.log(req.user)
     Post.findOne({ _id: req.params.id })
         .then(post => {
-            // Supprime l'image
             const filename = post.imageUrl.split('/images/')[1];
             fs.unlink(`images/${filename}`, () => {
                 Post.deleteOne({ _id: req.params.id })

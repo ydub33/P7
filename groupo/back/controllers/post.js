@@ -1,10 +1,9 @@
 const fs = require('fs');
 const Post = require('../models/Post');
-const { postAddErrors } = require('../_utils/errors');
 
 // Créer une post
 exports.createPost = async (req, res) => {
-
+    console.log(req.body)
     const { post } = req.body
     if (!post) {
         return res.status(400).json({ message: 'Missing data' })
@@ -13,15 +12,15 @@ exports.createPost = async (req, res) => {
         //Création d'un post
         const newPost = new Post({
             posterId: req.user,
+            name : req.user,
             post: req.body.post,
             imageUrl: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`,
             likers: []
         })
         let data = await newPost.save()
         return res.json({ message: 'Post créé', data: data })
-    } catch (err) {
-        const errors = postAddErrors(err)
-        return res.status(500).json({ errors })
+    } catch (err) {       
+        return res.status(500).json({ err })
     }
 }
 // Modifier un post

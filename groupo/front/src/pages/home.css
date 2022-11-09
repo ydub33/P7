@@ -41,7 +41,7 @@
   border-radius: 35px 35px 35px 0;
   padding: 20px;
   margin: 20px 0 20px 0;
-  width: 35em;
+  width: 90%;
   box-shadow: 7px 0px 46px -16px grey;
 }
 
@@ -122,7 +122,8 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 10%;
-  width: 52em;
+  
+ 
 }
 
 .form-post form {
@@ -160,13 +161,14 @@
 }
 
 .form-post form input {
-  font-size: 10px;
+  font-size: 16px;
   text-align: center;
   border-radius: 20px;
   width: 83%;
   height: 21px;
   padding: 5px;
   border: none;
+  margin-top: 10px;
 }
 
 

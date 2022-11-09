@@ -42,6 +42,8 @@ export default function Home() {
       .catch(err => console.log(err))
   }
 
+  // let name = localStorage.getItem('name')
+
   return (
     <>
       <div className="home-container">
@@ -53,12 +55,13 @@ export default function Home() {
         <div className="feed">
 
         <div className="create-post">
+        
           <PostAdd data={setPosts} />
         </div>
 
           {posts.map((post) => (
             <div className="post-container" key={post._id}>
-
+              
               <div className="group">
                 {post.post}
               </div>
@@ -75,7 +78,7 @@ export default function Home() {
                 <p className="pinfos">
                   créé le : {new Date(post.createdAt).toLocaleString("fr-FR")}
                 </p>
-
+                
               </div>
 
               {post.posterId === accountService.getInfo().userId || accountService.getInfo().userId === accountService.getAdmin() ? (

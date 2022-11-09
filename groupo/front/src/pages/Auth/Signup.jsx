@@ -38,7 +38,7 @@ const Signup = () => {
       <span className="loginDesc">
         Bienvenue
       </span>
-      <form onSubmit={onSubmit}>
+      <form className="formauth" onSubmit={onSubmit}>
 
         
         <div className="group">

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { postService } from '../../utils/postService';
 
+
 import "./postAdd.css";
 
 const PostAdd = ({ data }) => {
     const [text, setText] = useState([])
     const [image, setImage] = useState()
 
+   
     
     const onChange = (e) => {
         setText(e.target.value)
@@ -16,6 +18,8 @@ const PostAdd = ({ data }) => {
         console.log(e.target.files)
         setImage(e.target.files[0])
     }
+
+ 
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -32,16 +36,19 @@ const PostAdd = ({ data }) => {
             .catch(err => console.log(err))
     }
 
+    
+
     return (
         <div className='form-post'>
             <form onSubmit={onSubmit}>
-                
+                <div className="posterName">
+               
+                </div>
                 <div className="message">
-                   
                     <label htmlFor="post"></label>
                     <input type="text" className="share" name="post" 
                     placeholder='Message' onChange={onChange}
-                    style={{ fontSize: "22px" , height:"22px"}}/>
+                    style={{  height:"22px"}}/>
                     {/* <textarea name="post" placeholder='Message' onChange={onChange}></textarea> */}
 
                 </div>

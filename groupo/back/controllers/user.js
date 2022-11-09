@@ -41,6 +41,7 @@ exports.login = (req, res) => {
           } else {
             res.status(200).json({
               userId: user._id,
+              name:user.pseudo,
               token: jwt.sign(
                 { userId: user._id },
                 'RANDOM_TOKEN_SECRET',

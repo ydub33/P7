@@ -13,4 +13,4 @@ router.delete('/:id', auth, postCtrl.deletePost);
 router.patch('/like/:id/:pid', postCtrl.likePost);
 router.patch('/unlike/:id/:pid', auth, postCtrl.unlikePost);
 
-module.exports = router; 
+module.exports = router;  

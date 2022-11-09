@@ -27,6 +27,7 @@ const Login = () => {
       .login(credentials)
       .then((res) => {
         accountService.saveToken(res.data.token);
+        accountService.saveName(res.data.name);
         navigate("/home");
       })
       .catch((error) => console.log(error));
@@ -39,7 +40,7 @@ const Login = () => {
           Bienvenue
           </span>
           
-      <form onSubmit={onSubmit}>
+      <form  className="formauth" onSubmit={onSubmit}>
         
         
         <div className="group">
